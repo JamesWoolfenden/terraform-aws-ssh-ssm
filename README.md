@@ -4,7 +4,7 @@
 
 # terraform-aws-ssh-ssm [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-ssh-ssm.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-ssh-ssm) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-ssh-ssm.svg)](https://github.com/JamesWoolfenden/terraform-aws-ssh-ssm/releases/latest)
 
-Moving on from storing your keys in buckets
+Moving on from storing your keys in buckets, this module keeps your keys encrypted in ssm. It uses the default kms key for now. IAM policies control access in the parameter store.
 Follow the exampleA for the implementation.
 
 ---
@@ -21,7 +21,7 @@ Include this repository as a module in your existing terraform code:
 module "ssh-ssm" {
   source                  = "JamesWoolfenden/ssh-ssm/aws"
   version                 = "0.0.2"
-  s3_bucket_force_destroy = "${var.s3_bucket_force_destroy}"
+  ssmpath                 = "${var.ssmpath}"
   key_names               = "${var.key_names}"
   common_tags             = "${var.common_tags}"
 }
@@ -29,21 +29,19 @@ module "ssh-ssm" {
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| common_tags | - | map | - | yes |
-| depends_on | This is a way to make a module depends on, which isnt built in. | list | `<list>` | no |
-| key_names | - | list | - | yes |
+| Name        | Description                                                      |  Type  | Default  | Required |
+|-------------|------------------------------------------------------------------|:------:|:--------:|:--------:|
+| common_tags | -                                                                |  map   |    -     |   yes    |
+| depends_on  | This is a way to make a module depends on, which isn't built in. |  list  | `<list>` |    no    |
+| key_names   | -                                                                |  list  |    -     |   yes    |
+| ssmpath     | Where in SSM parameter to store this                             | string |    -     |   yes    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| certificates_bucket | - |
-| keys_bucket | - |
-
-
-
+| Name     | Description |
+|----------|-------------|
+| key-path | -           |
+| keys     | -           |
 
 ## Related Projects
 
@@ -51,13 +49,11 @@ Check out these related projects.
 
 - [terraform-aws-codebuild](https://github.com/jameswoolfenden/terraform-aws-codebuild) - Making a Build pipeline
 
-
 ## Help
 
 **Got a question?**
 
 File a GitHub [issue](https://github.com/jameswoolfenden/terraform-aws-ssh-ssm/issues).
-
 
 ## Contributing
 
@@ -92,11 +88,9 @@ See [LICENSE](LICENSE) for full details.
     specific language governing permissions and limitations
     under the License.
 
-
 ### Contributors
 
   [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
-
 
   [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
   [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
