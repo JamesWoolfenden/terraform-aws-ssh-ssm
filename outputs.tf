@@ -10,21 +10,21 @@ output "keys" {
 
 output "private_key_pem" {
   description = "The private key data in PEM format."
-  value       = tls_private_key.ssh[*].private_key_pem
+  value       = tls_private_key.ssh.*.private_key_pem
 }
 
 output "public_key_pem" {
   description = "The public key data in PEM format."
-  value       = tls_private_key.ssh[*].public_key_pem
+  value       = tls_private_key.ssh.*.public_key_pem
 }
 
 output "public_key_openssh" {
   description = "The public key data in OpenSSH authorized_keys format"
-  value       = tls_private_key.ssh[*].public_key_openssh
+  value       = tls_private_key.ssh.*.public_key_openssh
 
 }
 
 output "public_key_fingerprint_md5" {
   description = "The md5 hash of the public key data in OpenSSH MD5 hash format"
-  value       = tls_private_key.ssh[*].public_key_fingerprint_md5
+  value       = tls_private_key.ssh.*.public_key_fingerprint_md5
 }
