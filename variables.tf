@@ -1,16 +1,14 @@
 variable "key_names" {
-  type = "list"
+  type        = list
+  description = "A list of key names"
 }
 
 variable "common_tags" {
-  type = "map"
+  type        = map
+  description = "Implements the common tags scheme"
 }
 
 variable "ssmpath" {
-  type        = "string"
+  type        = string
   description = "Where in SSM parameter to store this"
-}
-
-variable "region" {
-  default = "eu-west-1"
 }
