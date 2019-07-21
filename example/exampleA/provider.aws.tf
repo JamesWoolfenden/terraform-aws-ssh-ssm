@@ -1,8 +1,8 @@
 provider "aws" {
-    region="eu-west-1"
-    version = "2.18"
+  region  = "eu-west-1"
+  version = "2.18"
 }
 
 provider "tls" {
-    version = "2.0"
+  version = "2.0"
 }
