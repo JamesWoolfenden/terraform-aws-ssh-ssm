@@ -22,13 +22,13 @@ Include this repository as a module in your existing terraform code:
 ```hcl
 module "ssh-ssm" {
   source                  = "JamesWoolfenden/ssh-ssm/aws"
-  version                 = "0.0.2"
-  ssmpath                 = "${var.ssmpath}"
-  key_names               = "${var.key_names}"
-  common_tags             = "${var.common_tags}"
+  version                 = "0.2.12"
+  ssmpath                 = var.ssmpath
+  key_names               = var.key_names
+  common_tags             = var.common_tags
 }
 ```
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Providers
 
 | Name | Version |
