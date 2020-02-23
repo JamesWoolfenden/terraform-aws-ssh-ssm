@@ -1,7 +1,12 @@
 
 [![Slalom][logo]](https://slalom.com)
 
-# terraform-aws-ssh-ssm [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-ssh-ssm.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-ssh-ssm) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-ssh-ssm.svg)](https://github.com/JamesWoolfenden/terraform-aws-ssh-ssm/releases/latest)
+# terraform-aws-ssh-ssm
+
+[![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-ssh-ssm.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-ssh-ssm)
+[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-ssh-ssm.svg)](https://github.com/JamesWoolfenden/terraform-aws-ssh-ssm/releases/latest)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
 Moving on from storing your keys in buckets, this module keeps your keys encrypted in ssm. It uses the default kms key for now. IAM policies control access in the parameter store.
 Follow the exampleA for the implementation.
@@ -24,21 +29,32 @@ module "ssh-ssm" {
 }
 ```
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+| tls | n/a |
+
 ## Inputs
 
-| Name        | Description                                                      |  Type  | Default  | Required |
-|-------------|------------------------------------------------------------------|:------:|:--------:|:--------:|
-| common_tags | -                                                                |  map   |    -     |   yes    |
-| depends_on  | This is a way to make a module depends on, which isn't built in. |  list  | `<list>` |    no    |
-| key_names   | -                                                                |  list  |    -     |   yes    |
-| ssmpath     | Where in SSM parameter to store this                             | string |    -     |   yes    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:-----:|
+| common\_tags | Implements the common tags scheme | `map` | n/a | yes |
+| key\_names | A list of key names | `list` | n/a | yes |
+| ssmpath | Where in SSM parameter to store this | `string` | n/a | yes |
 
 ## Outputs
 
-| Name     | Description |
-|----------|-------------|
-| key-path | -           |
-| keys     | -           |
+| Name | Description |
+|------|-------------|
+| key-path | The path to the key in ssm |
+| keys | The name of the key |
+| private\_key\_pem | The private key data in PEM format. |
+| public\_key\_fingerprint\_md5 | The md5 hash of the public key data in OpenSSH MD5 hash format |
+| public\_key\_openssh | The public key data in OpenSSH authorized\_keys format |
+| public\_key\_pem | The public key data in PEM format. |
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Instructions
 
@@ -62,7 +78,7 @@ Please use the [issue tracker](https://github.com/jameswoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright © 2019-2019 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
 
 ## License
 
@@ -89,11 +105,10 @@ under the License.
 
 ### Contributors
 
-  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
+[![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
 
-  [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
-  [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-
+[jameswoolfenden_homepage]: https://github.com/jameswoolfenden
+[jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden

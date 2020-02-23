@@ -5,4 +5,3 @@ common_tags = {
 }
 key_names = ["basic"]
 ssmpath   = "/core/ssh/dev"
-
