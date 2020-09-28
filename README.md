@@ -27,7 +27,6 @@ module "ssh-ssm" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 No requirements.
@@ -35,28 +34,28 @@ No requirements.
 ## Providers
 
 | Name | Version |
-| ---- | ------- |
-| aws  | n/a     |
-| tls  | n/a     |
+|------|---------|
+| aws | n/a |
+| tls | n/a |
 
 ## Inputs
 
-| Name        | Description                          | Type     | Default | Required |
-| ----------- | ------------------------------------ | -------- | ------- | :------: |
-| common_tags | Implements the common tags scheme    | `map`    | n/a     |   yes    |
-| key_names   | A list of key names                  | `list`   | n/a     |   yes    |
-| ssmpath     | Where in SSM parameter to store this | `string` | n/a     |   yes    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| common\_tags | Implements the common tags scheme | `map` | n/a | yes |
+| key\_names | A list of key names | `list` | n/a | yes |
+| ssmpath | Where in SSM parameter to store this | `string` | n/a | yes |
 
 ## Outputs
 
-| Name                       | Description                                                    |
-| -------------------------- | -------------------------------------------------------------- |
-| key-path                   | The path to the key in ssm                                     |
-| keys                       | The name of the key                                            |
-| private_key_pem            | The private key data in PEM format.                            |
-| public_key_fingerprint_md5 | The md5 hash of the public key data in OpenSSH MD5 hash format |
-| public_key_openssh         | The public key data in OpenSSH authorized_keys format          |
-| public_key_pem             | The public key data in PEM format.                             |
+| Name | Description |
+|------|-------------|
+| key-path | The path to the key in ssm |
+| keys | The name of the key |
+| private\_key\_pem | The private key data in PEM format. |
+| public\_key\_fingerprint\_md5 | The md5 hash of the public key data in OpenSSH MD5 hash format |
+| public\_key\_openssh | The public key data in OpenSSH authorized\_keys format |
+| public\_key\_pem | The public key data in PEM format. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
