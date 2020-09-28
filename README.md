@@ -1,6 +1,3 @@
-
-[![Slalom][logo]](https://slalom.com)
-
 # terraform-aws-ssh-ssm
 
 [![Build Status](https://github.com/JamesWoolfenden/terraform-aws-ssh-ssm/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-ssh-ssm)
@@ -28,7 +25,9 @@ module "ssh-ssm" {
   common_tags             = var.common_tags
 }
 ```
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
 No requirements.
@@ -36,30 +35,31 @@ No requirements.
 ## Providers
 
 | Name | Version |
-|------|---------|
-| aws | n/a |
-| tls | n/a |
+| ---- | ------- |
+| aws  | n/a     |
+| tls  | n/a     |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| common\_tags | Implements the common tags scheme | `map` | n/a | yes |
-| key\_names | A list of key names | `list` | n/a | yes |
-| ssmpath | Where in SSM parameter to store this | `string` | n/a | yes |
+| Name        | Description                          | Type     | Default | Required |
+| ----------- | ------------------------------------ | -------- | ------- | :------: |
+| common_tags | Implements the common tags scheme    | `map`    | n/a     |   yes    |
+| key_names   | A list of key names                  | `list`   | n/a     |   yes    |
+| ssmpath     | Where in SSM parameter to store this | `string` | n/a     |   yes    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| key-path | The path to the key in ssm |
-| keys | The name of the key |
-| private\_key\_pem | The private key data in PEM format. |
-| public\_key\_fingerprint\_md5 | The md5 hash of the public key data in OpenSSH MD5 hash format |
-| public\_key\_openssh | The public key data in OpenSSH authorized\_keys format |
-| public\_key\_pem | The public key data in PEM format. |
+| Name                       | Description                                                    |
+| -------------------------- | -------------------------------------------------------------- |
+| key-path                   | The path to the key in ssm                                     |
+| keys                       | The name of the key                                            |
+| private_key_pem            | The private key data in PEM format.                            |
+| public_key_fingerprint_md5 | The md5 hash of the public key data in OpenSSH MD5 hash format |
+| public_key_openssh         | The public key data in OpenSSH authorized_keys format          |
+| public_key_pem             | The public key data in PEM format.                             |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Instructions
 
 ## Related Projects
@@ -82,7 +82,7 @@ Please use the [issue tracker](https://github.com/jameswoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2020 James Woolfenden
 
 ## License
 
@@ -91,19 +91,19 @@ Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
 See [LICENSE](LICENSE) for full details.
 
 Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
+or more contributor license agreements. See the NOTICE file
 distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
+regarding copyright ownership. The ASF licenses this file
 to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
+with the License. You may obtain a copy of the License at
 
 <https://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
+KIND, either express or implied. See the License for the
 specific language governing permissions and limitations
 under the License.
 
@@ -113,12 +113,9 @@ under the License.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-[logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
-[website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden
-
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-ssh-ssm&url=https://github.com/jameswoolfenden/terraform-aws-ssh-ssm
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-ssh-ssm&url=https://github.com/jameswoolfenden/terraform-aws-ssh-ssm
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/jameswoolfenden/terraform-aws-ssh-ssm
