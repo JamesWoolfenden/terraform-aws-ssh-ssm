@@ -46,8 +46,8 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| common\_tags | Implements the common tags scheme | `map` | n/a | yes |
-| key\_names | A list of key names | `list` | n/a | yes |
+| common\_tags | Implements the common tags scheme | `map(any)` | n/a | yes |
+| key\_names | A list of key names | `list(any)` | n/a | yes |
 | ssmpath | Where in SSM parameter to store this | `string` | n/a | yes |
 
 ## Outputs

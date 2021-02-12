@@ -5,7 +5,7 @@ output "key-path" {
 
 output "keys" {
   description = "The name of the key"
-  value       = "${aws_key_pair.ssh.*.key_name}"
+  value       = aws_key_pair.ssh.*.key_name
 }
 
 output "private_key_pem" {

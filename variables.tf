@@ -1,10 +1,10 @@
 variable "key_names" {
-  type        = list
+  type        = list(any)
   description = "A list of key names"
 }
 
 variable "common_tags" {
-  type        = map
+  type        = map(any)
   description = "Implements the common tags scheme"
 }
 
