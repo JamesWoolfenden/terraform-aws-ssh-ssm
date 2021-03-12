@@ -42,6 +42,18 @@ No requirements.
 | aws | n/a |
 | tls | n/a |
 
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [aws_key_pair](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair) |
+| [aws_ssm_parameter](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) |
+| [tls_private_key](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -60,7 +72,6 @@ No requirements.
 | public\_key\_fingerprint\_md5 | The md5 hash of the public key data in OpenSSH MD5 hash format |
 | public\_key\_openssh | The public key data in OpenSSH authorized\_keys format |
 | public\_key\_pem | The public key data in PEM format. |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Instructions
