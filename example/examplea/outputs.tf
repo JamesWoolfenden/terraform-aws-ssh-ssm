@@ -10,11 +10,13 @@ output "keys" {
 output "private_key_pem" {
   description = "The private key data in PEM format."
   value       = module.ssh-ssm.private_key_pem
+  sensitive   = true
 }
 
 output "public_key_pem" {
   description = "The public key data in pem format"
   value       = module.ssh-ssm.public_key_pem
+  sensitive   = true
 }
 
 output "public_key_openssh" {

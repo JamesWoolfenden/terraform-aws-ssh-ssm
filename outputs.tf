@@ -11,11 +11,13 @@ output "keys" {
 output "private_key_pem" {
   description = "The private key data in PEM format."
   value       = tls_private_key.ssh.*.private_key_pem
+  sensitive   = true
 }
 
 output "public_key_pem" {
   description = "The public key data in PEM format."
   value       = tls_private_key.ssh.*.public_key_pem
+  sensitive   = true
 }
 
 output "public_key_openssh" {
