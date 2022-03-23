@@ -31,17 +31,16 @@ module "ssh-ssm" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name                                             | Version |
-| ------------------------------------------------ | ------- |
-| <a name="provider_aws"></a> [aws](#provider_aws) | n/a     |
-| <a name="provider_tls"></a> [tls](#provider_tls) | n/a     |
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
 
 ## Modules
 
@@ -49,32 +48,31 @@ No modules.
 
 ## Resources
 
-| Name                                                                                                                       | Type     |
-| -------------------------------------------------------------------------------------------------------------------------- | -------- |
-| [aws_key_pair.ssh](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair)                   | resource |
+| Name | Type |
+|------|------|
+| [aws_key_pair.ssh](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair) | resource |
 | [aws_ssm_parameter.pem-private](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) | resource |
-| [aws_ssm_parameter.ssh-public](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter)  | resource |
-| [tls_private_key.ssh](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key)             | resource |
+| [aws_ssm_parameter.ssh-public](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) | resource |
+| [tls_private_key.ssh](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) | resource |
 
 ## Inputs
 
-| Name                                                               | Description                          | Type        | Default | Required |
-| ------------------------------------------------------------------ | ------------------------------------ | ----------- | ------- | :------: |
-| <a name="input_common_tags"></a> [common_tags](#input_common_tags) | Implements the common tags scheme    | `map(any)`  | n/a     |   yes    |
-| <a name="input_key_names"></a> [key_names](#input_key_names)       | A list of key names                  | `list(any)` | n/a     |   yes    |
-| <a name="input_ssmpath"></a> [ssmpath](#input_ssmpath)             | Where in SSM parameter to store this | `string`    | n/a     |   yes    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | Implements the common tags scheme | `map(any)` | n/a | yes |
+| <a name="input_key_names"></a> [key\_names](#input\_key\_names) | A list of key names | `list(any)` | n/a | yes |
+| <a name="input_ssmpath"></a> [ssmpath](#input\_ssmpath) | Where in SSM parameter to store this | `string` | n/a | yes |
 
 ## Outputs
 
-| Name                                                                                                              | Description                                                    |
-| ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| <a name="output_key-path"></a> [key-path](#output_key-path)                                                       | The path to the key in ssm                                     |
-| <a name="output_keys"></a> [keys](#output_keys)                                                                   | The name of the key                                            |
-| <a name="output_private_key_pem"></a> [private_key_pem](#output_private_key_pem)                                  | The private key data in PEM format.                            |
-| <a name="output_public_key_fingerprint_md5"></a> [public_key_fingerprint_md5](#output_public_key_fingerprint_md5) | The md5 hash of the public key data in OpenSSH MD5 hash format |
-| <a name="output_public_key_openssh"></a> [public_key_openssh](#output_public_key_openssh)                         | The public key data in OpenSSH authorized_keys format          |
-| <a name="output_public_key_pem"></a> [public_key_pem](#output_public_key_pem)                                     | The public key data in PEM format.                             |
-
+| Name | Description |
+|------|-------------|
+| <a name="output_key-path"></a> [key-path](#output\_key-path) | The path to the key in ssm |
+| <a name="output_keys"></a> [keys](#output\_keys) | The name of the key |
+| <a name="output_private_key_pem"></a> [private\_key\_pem](#output\_private\_key\_pem) | The private key data in PEM format. |
+| <a name="output_public_key_fingerprint_md5"></a> [public\_key\_fingerprint\_md5](#output\_public\_key\_fingerprint\_md5) | The md5 hash of the public key data in OpenSSH MD5 hash format |
+| <a name="output_public_key_openssh"></a> [public\_key\_openssh](#output\_public\_key\_openssh) | The public key data in OpenSSH authorized\_keys format |
+| <a name="output_public_key_pem"></a> [public\_key\_pem](#output\_public\_key\_pem) | The public key data in PEM format. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Instructions
