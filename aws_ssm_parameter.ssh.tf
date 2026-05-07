@@ -1,4 +1,5 @@
 resource "aws_ssm_parameter" "pem-private" {
+  # checkov:skip=CKV_AWS_337: module intentionally uses the default KMS key per README
   count = length(var.key_names)
   name  = "${var.ssmpath}/id_rsa.${var.key_names[count.index]}"
   type  = "SecureString"
@@ -7,6 +8,7 @@ resource "aws_ssm_parameter" "pem-private" {
 }
 
 resource "aws_ssm_parameter" "ssh-public" {
+  # checkov:skip=CKV_AWS_337: module intentionally uses the default KMS key per README
   count = length(var.key_names)
   name  = "${var.ssmpath}/id_rsa.${var.key_names[count.index]}.pub"
   type  = "SecureString"

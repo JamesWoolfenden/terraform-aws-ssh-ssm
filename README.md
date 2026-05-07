@@ -1,13 +1,11 @@
 # terraform-aws-ssh-ssm
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-ssh-ssm/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-ssh-ssm)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-ssh-ssm/workflows/Verify/badge.svg?branch=main)](https://github.com/JamesWoolfenden/terraform-aws-ssh-ssm)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-ssh-ssm.svg)](https://github.com/JamesWoolfenden/terraform-aws-ssh-ssm/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-ssh-ssm.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-ssh-ssm/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/JamesWoolfenden/terraform-aws-ssh-ssm/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-ssh-ssm&benchmark=CIS+AWS+V1.2)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-aws-ssh-ssm/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-ssh-ssm&benchmark=INFRASTRUCTURE+SECURITY)
 
 Moving on from storing your keys in buckets, this module keeps your keys encrypted in ssm. It uses the default kms key for now. IAM policies control access in the parameter store.
 Follow the exampleA for the implementation.
@@ -38,7 +36,7 @@ No requirements.
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 | <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
 
@@ -49,7 +47,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_key_pair.ssh](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair) | resource |
 | [aws_ssm_parameter.pem-private](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) | resource |
 | [aws_ssm_parameter.ssh-public](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) | resource |
@@ -58,7 +56,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | Implements the common tags scheme | `map(any)` | n/a | yes |
 | <a name="input_key_names"></a> [key\_names](#input\_key\_names) | A list of key names | `list(any)` | n/a | yes |
 | <a name="input_ssmpath"></a> [ssmpath](#input\_ssmpath) | Where in SSM parameter to store this | `string` | n/a | yes |
@@ -66,7 +64,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_key-path"></a> [key-path](#output\_key-path) | The path to the key in ssm |
 | <a name="output_keys"></a> [keys](#output\_keys) | The name of the key |
 | <a name="output_private_key_pem"></a> [private\_key\_pem](#output\_private\_key\_pem) | The private key data in PEM format. |
